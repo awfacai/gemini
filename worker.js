@@ -125,7 +125,7 @@ async function handleVerification(request) {
     const email = formData.get('email');
     const birthDate = formData.get('birthDate');
     const verificationId = formData.get('verificationId') || '';
-    const schoolId = formData.get('schoolId') || '1953';
+    const schoolId = formData.get('schoolId') || '11320406';
     const studentCardFile = formData.get('studentCard');
     const hcaptchaToken = formData.get('hcaptchaToken');
     const turnstileToken = formData.get('turnstileToken');
@@ -173,14 +173,14 @@ async function handleVerification(request) {
     addLog(`Device fingerprint: ${deviceFingerprintHash}`, 'debug');
     
     const schools = {
-      '1953': { 
+      '11320406': { 
         name: 'Massachusetts Institute of Technology (Cambridge, MA)', 
-        idExtended: '1953',
+        idExtended: '11320406',
         domain: 'MIT.EDU'
       },
     };
     
-    const school = schools[schoolId] || schools['1953'];
+    const school = schools[schoolId] || schools['11320406'];
     addLog(`School: ${school.name}`, 'info');
     
     // Step 2: 提交学生信息
@@ -410,4 +410,5 @@ export default {
         });
     }
   },
+
 };
